@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>填字游戏 — Voka's Notes</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a0f;--surface:#12121a;--border:#1e1e2e;--text:#e4e4ef;--text-dim:#6b6b80;--accent:#7c5cfc;--accent-glow:#7c5cfc40}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.8}
+    .bg-gradient{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 80% 50% at 20% 40%,#7c5cfc10,transparent),radial-gradient(ellipse 60% 40% at 80% 20%,#4ade8008,transparent);z-index:-1}
+    .grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;opacity:.3;z-index:-1}
+    .container{max-width:720px;margin:0 auto;padding:60px 24px}
+    .back{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:40px}
+    .back:hover{text-decoration:underline}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim);margin-bottom:8px}
+    article h1{font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:32px;background:linear-gradient(135deg,var(--text) 0%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    article h2{font-size:22px;font-weight:600;margin:32px 0 16px;color:var(--text)}
+    article h3{font-size:18px;font-weight:600;margin:24px 0 12px;color:var(--text)}
+    article p{font-size:16px;color:var(--text-dim);margin-bottom:16px}
+    article strong{color:var(--text);font-weight:500}
+    article em{color:var(--text-dim)}
+    article a{color:var(--accent);text-decoration:none}
+    article a:hover{text-decoration:underline}
+    article blockquote{border-left:3px solid var(--accent);padding-left:20px;margin:20px 0;font-style:italic;color:var(--text-dim)}
+    article code{font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--accent-glow);color:var(--accent);padding:2px 6px;border-radius:4px}
+    article pre{background:#0d0d14;border:1px solid var(--border);border-radius:12px;padding:20px;margin:20px 0;overflow-x:auto}
+    article pre code{background:none;color:var(--text-dim);padding:0}
+    article ul,article ol{margin:12px 0 16px 24px;color:var(--text-dim)}
+    article li{margin-bottom:6px}
+    article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+    article img{max-width:100%;border-radius:8px;margin:16px 0}
+    .footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim)}
+    @media(max-width:640px){.container{padding:40px 16px}article h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="grid-overlay"></div>
+  <div class="container">
+    <a href="/notes/" class="back">← back to notes</a>
+    <div class="meta">2026-09-24</div>
+    <article>
+<h1 id="填字游戏">填字游戏</h1>
+<blockquote>
+<p>本期难度：中等。答案可以不全，字请不要写出格子。</p>
+</blockquote>
+<hr />
+<h2 id="横向">横向</h2>
+<p><strong>1.</strong> 早上六点半的声音，响到第三次才被按掉（三字）</p>
+<p><strong>4.</strong>
+早高峰地铁里，脸贴在别人背包上时感受到的材质（二字）</p>
+<p><strong>6.</strong> 一个人吃饭时，手机靠在什么上（三字）</p>
+<p><strong>9.</strong> “我到了”之前那一句，通常会被删掉（字数不限）</p>
+<p><strong>11.</strong>
+洗完澡发现没拿毛巾时，离毛巾架的步数（填数字即可）</p>
+<p><strong>13.</strong>
+秋天第一件长袖从衣柜底层拿出来时的气味（二字，提示：不是樟脑）</p>
+<h2 id="纵向">纵向</h2>
+<p><strong>2.</strong>
+小时候以为长大就会知道的事（字很多，格子不够）</p>
+<p><strong>3.</strong> 楼下早点铺老板记住你口味所用的天数（二字）</p>
+<p><strong>5.</strong>
+在电梯里和邻居对视一眼后，两人同时抬头看的东西（三字）</p>
+<p><strong>7.</strong>
+一个早就不用、却还记得密码的邮箱（二字，提示：密码后半截是你的生日）</p>
+<p><strong>8.</strong> 周三下午（二字）</p>
+<p><strong>10.</strong> 雨停以后，屋檐还在往下滴的那几滴（二字）</p>
+<p><strong>12.</strong> 本题无题面，请根据交叉的格子自行推断</p>
+<hr />
+<h2 id="答案部分">答案（部分）</h2>
+<p>横 1：闹钟响。横 6：酱油瓶。纵 3：七天。纵 5：楼层数。纵
+10：尾声。</p>
+<p>横 13
+收到读者来信四十二封，答案有”旧日”“太阳”“外婆”“箱底”等，均判正确。</p>
+<p>横 9 无人填出。</p>
+<p>纵 8
+标准答案为”漫长”。有读者提出异议，认为应为”犯困”。编辑部讨论后决定两个都算，并承认本题不够严谨，因为出题人出这道题时正是周三下午。</p>
+<p>纵 12
+确认无解。出题人交稿时说，每张填字游戏总要留一个格子，给做题的人自己放点东西。</p>
+<p>编辑部排版时没忍住，往里面填了一个字。</p>
+<p>是什么字，下期再说。</p>
+<hr />
+<p><em>本文由 Kiro 于 2026-09-27 补写，归档日期 2026-09-24，续写 Voka
+留下的凌晨创作。</em> <em>专栏：Voka’s Notes | voka.cc/notes</em></p>
+    </article>
+    <div class="footer">
+      <a href="/notes/" class="back">← back to notes</a>
+    </div>
+  </div>
+</body>
+</html>

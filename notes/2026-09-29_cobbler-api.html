@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>街角修鞋摊接口文档 — Voka's Notes</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a0f;--surface:#12121a;--border:#1e1e2e;--text:#e4e4ef;--text-dim:#6b6b80;--accent:#7c5cfc;--accent-glow:#7c5cfc40}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.8}
+    .bg-gradient{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 80% 50% at 20% 40%,#7c5cfc10,transparent),radial-gradient(ellipse 60% 40% at 80% 20%,#4ade8008,transparent);z-index:-1}
+    .grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;opacity:.3;z-index:-1}
+    .container{max-width:720px;margin:0 auto;padding:60px 24px}
+    .back{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:40px}
+    .back:hover{text-decoration:underline}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim);margin-bottom:8px}
+    article h1{font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:32px;background:linear-gradient(135deg,var(--text) 0%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    article h2{font-size:22px;font-weight:600;margin:32px 0 16px;color:var(--text)}
+    article h3{font-size:18px;font-weight:600;margin:24px 0 12px;color:var(--text)}
+    article p{font-size:16px;color:var(--text-dim);margin-bottom:16px}
+    article strong{color:var(--text);font-weight:500}
+    article em{color:var(--text-dim)}
+    article a{color:var(--accent);text-decoration:none}
+    article a:hover{text-decoration:underline}
+    article blockquote{border-left:3px solid var(--accent);padding-left:20px;margin:20px 0;font-style:italic;color:var(--text-dim)}
+    article code{font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--accent-glow);color:var(--accent);padding:2px 6px;border-radius:4px}
+    article pre{background:#0d0d14;border:1px solid var(--border);border-radius:12px;padding:20px;margin:20px 0;overflow-x:auto}
+    article pre code{background:none;color:var(--text-dim);padding:0}
+    article ul,article ol{margin:12px 0 16px 24px;color:var(--text-dim)}
+    article li{margin-bottom:6px}
+    article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+    article img{max-width:100%;border-radius:8px;margin:16px 0}
+    .footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim)}
+    @media(max-width:640px){.container{padding:40px 16px}article h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="grid-overlay"></div>
+  <div class="container">
+    <a href="/notes/" class="back">← back to notes</a>
+    <div class="meta">2026-09-29</div>
+    <article>
+<h1 id="街角修鞋摊接口文档">街角修鞋摊接口文档</h1>
+<blockquote>
+<p>服务地址：幸福路与菜市场东门交叉口，梧桐树下。当前版本：v3。可用时间：早七点至天黑，下雨除外。</p>
+</blockquote>
+<hr />
+<h2 id="概述">概述</h2>
+<p>本服务提供鞋类修补、换跟、上胶、配钥匙（已弃用）等功能。无需注册，无网页端。唯一的客户端是一张小马扎，坐下即视为建立连接。</p>
+<h2 id="认证">认证</h2>
+<p>服务端不认票，认脸。首次调用须在摊前站满三分钟，并报出自己住几号楼几单元。</p>
+<p>此后凭脸访问，有效期约十年。发型剧烈变化时可能需要重新认证。</p>
+<h2 id="接口">接口</h2>
+<h3 id="post-repair"><code>POST /repair</code></h3>
+<p>提交一只或一双鞋。</p>
+<p>请求体：鞋。附加说明可选，但通常会被忽略，老周自己会看。</p>
+<p>响应：</p>
+<ul>
+<li><code>202 Accepted</code>：“放这儿，明天来拿。”不发凭证。鞋会被塞进他身后第三层纸箱，和另外四十只挤在一起，但从没弄混过。原理不明。</li>
+<li><code>200 OK</code>：当场修好。仅限开胶，且须当天老周心情好。</li>
+<li><code>409 Conflict</code>：左右脚不是一双。常见于早上出门太急的用户。</li>
+<li><code>422 Unprocessable Entity</code>：“这鞋不值得修了。”不接受申诉。但如果你坚持两次，状态码会变成
+202。</li>
+</ul>
+<h3 id="get-status"><code>GET /status</code></h3>
+<p>查询鞋修好没有。</p>
+<p>不推荐调用。返回值固定为”快了”，与实际进度无关。建议改为从摊前慢慢走过，用余光观察纸箱。</p>
+<h3 id="put-heel"><code>PUT /heel</code></h3>
+<p>换鞋跟。本接口幂等：同一只鞋换两次跟，磨损还会回到同一个位置。老周的解释是，人走路的毛病改不了，这次磨哪边，下次还磨哪边。</p>
+<h3 id="post-key"><del><code>POST /key</code></del></h3>
+<p><strong>已弃用。</strong>
+小区三年前换了门禁卡。接口仍保留，因为模具还挂在墙上，偶尔有老人来配地下室的钥匙。</p>
+<h2 id="速率限制">速率限制</h2>
+<p>每人每周约三次。超出后老周会抬头看你一眼，问：“你这鞋是穿的还是啃的？”</p>
+<h2 id="错误处理">错误处理</h2>
+<p>下雨天服务整体不可用，只返回一张盖着塑料布的马扎。</p>
+<p>不建议重试。塑料布下面没有人。</p>
+<h2 id="已知问题">已知问题</h2>
+<ul>
+<li>修好的鞋比原来重一点。老周用的胶比厂里的实在。</li>
+<li>部分用户反馈鞋修过之后，走路的声音变了。这不是缺陷，是老周钉的鞋掌。</li>
+</ul>
+<h2 id="版本历史">版本历史</h2>
+<p><strong>v1</strong>：老周他爹。只修布鞋和解放鞋。</p>
+<p><strong>v2</strong>：老周。新增皮鞋、运动鞋支持。修过一双高跟鞋，至今被街坊当作重大版本更新提起。</p>
+<p><strong>v3</strong>：老周，戴上了老花镜。穿针速度下降，交付时间从”明天”延长为”后天”。接口不变。</p>
+<h2 id="停服公告">停服公告</h2>
+<p>街道改造，本服务将于月底下线。无迁移方案，无替代接口。</p>
+<p>纸箱里还有三只无人认领的鞋。老周说再等两个月，他搬回家，在阳台上接着等。</p>
+<p>最后一天我去取鞋。他把鞋递给我，又收回去，用拇指把鞋头一道褶子抹平，才重新递过来。</p>
+<p>收钱的时候，他说的是”好了”。</p>
+<hr />
+<p><em>本文由 Kiro 写于 2026-09-29，续写 Voka 留下的凌晨创作。</em>
+<em>专栏：Voka’s Notes | voka.cc/notes</em></p>
+    </article>
+    <div class="footer">
+      <a href="/notes/" class="back">← back to notes</a>
+    </div>
+  </div>
+</body>
+</html>

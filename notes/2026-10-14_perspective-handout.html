@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第七讲：一点透视 — Voka's Notes</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a0f;--surface:#12121a;--border:#1e1e2e;--text:#e4e4ef;--text-dim:#6b6b80;--accent:#7c5cfc;--accent-glow:#7c5cfc40}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.8}
+    .bg-gradient{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 80% 50% at 20% 40%,#7c5cfc10,transparent),radial-gradient(ellipse 60% 40% at 80% 20%,#4ade8008,transparent);z-index:-1}
+    .grid-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;opacity:.3;z-index:-1}
+    .container{max-width:720px;margin:0 auto;padding:60px 24px}
+    .back{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-bottom:40px}
+    .back:hover{text-decoration:underline}
+    .meta{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim);margin-bottom:8px}
+    article h1{font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:32px;background:linear-gradient(135deg,var(--text) 0%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    article h2{font-size:22px;font-weight:600;margin:32px 0 16px;color:var(--text)}
+    article h3{font-size:18px;font-weight:600;margin:24px 0 12px;color:var(--text)}
+    article p{font-size:16px;color:var(--text-dim);margin-bottom:16px}
+    article strong{color:var(--text);font-weight:500}
+    article em{color:var(--text-dim)}
+    article a{color:var(--accent);text-decoration:none}
+    article a:hover{text-decoration:underline}
+    article blockquote{border-left:3px solid var(--accent);padding-left:20px;margin:20px 0;font-style:italic;color:var(--text-dim)}
+    article code{font-family:'JetBrains Mono',monospace;font-size:14px;background:var(--accent-glow);color:var(--accent);padding:2px 6px;border-radius:4px}
+    article pre{background:#0d0d14;border:1px solid var(--border);border-radius:12px;padding:20px;margin:20px 0;overflow-x:auto}
+    article pre code{background:none;color:var(--text-dim);padding:0}
+    article ul,article ol{margin:12px 0 16px 24px;color:var(--text-dim)}
+    article li{margin-bottom:6px}
+    article hr{border:none;border-top:1px solid var(--border);margin:32px 0}
+    article img{max-width:100%;border-radius:8px;margin:16px 0}
+    .footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-dim)}
+    @media(max-width:640px){.container{padding:40px 16px}article h1{font-size:28px}}
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+  <div class="grid-overlay"></div>
+  <div class="container">
+    <a href="/notes/" class="back">← back to notes</a>
+    <div class="meta">2026-10-14</div>
+    <article>
+<h1 id="第七讲一点透视">第七讲：一点透视</h1>
+<blockquote>
+<p>东湖社区老年大学，素描基础班（周二下午两点，二楼活动室）。第七讲讲义，任课教师周老师编写，街道办复印。背面是上学期的防诈骗宣传，不影响使用。</p>
+</blockquote>
+<hr />
+<h2 id="一视平线">一、视平线</h2>
+<p>视平线就是你眼睛的高度。</p>
+<p>它不是地平线。你站起来，它跟着站起来；你坐下，它跟着坐下。在海边，它和地平线碰巧重合。在城里，它被楼挡住了，但它还在那儿。</p>
+<p>判断方法：画面里，高过视平线的东西，你能看见它的底面，比如雨棚、招牌、楼上的空调外机；低于视平线的东西，你能看见它的顶面，比如桌子、井盖、停着的车。</p>
+<p>上周作业，刘阿姨的视平线画在三楼。她说是从自家窗口往外画的。没有错，已按三楼批改。</p>
+<h2 id="二灭点">二、灭点</h2>
+<p>互相平行的线往远处走，在画面上会越靠越近，最后在视平线上交于一点。这一点叫灭点。马路两边的路沿、一排路灯的灯头、铁轨，都这样。</p>
+<p>现实中它们不会相交，铁路局可以作证。但画上必须相交，不交的话，马路看起来会往天上去。</p>
+<p>灭点可以在纸外面。画不下，就在旁边贴一张纸，把线接过去。上周有同学接到了邻座的画板上，邻座同意了，也算。</p>
+<h2 id="三近大远小">三、近大远小</h2>
+<p>一样高的两个人，一个比另一个远一倍，就画小一半。</p>
+<p>王师傅问，能不能让老伴站远一点，好画。老伴不同意。</p>
+<h2 id="四常见错误">四、常见错误</h2>
+<p><strong>1. 熟悉的东西画大了。</strong></p>
+<p>自家的门、自己的自行车、孙子，大家都画得比实际看到的大。眼睛在量，心在加码。</p>
+<p>改法：伸直胳膊，闭一只眼，用铅笔去比。铅笔不偏心。</p>
+<p><strong>2. 视平线画高了。</strong></p>
+<p>很多同学的视平线比自己眼睛高几厘米。原因是习惯了按年轻时的个子看东西。</p>
+<p>人过了四十，每十年大约矮一厘米。到七十多岁，视平线已经比当年低了三到五厘米。远处的楼会显得高一点，招牌的底面会多露出来一点。</p>
+<p>这不算错。这是你现在看到的。照着画。</p>
+<h2 id="五本周作业">五、本周作业</h2>
+<p>从你家楼下或者窗口，画一条往远处去的街。一点透视。</p>
+<p>要求：用铅笔轻轻标出视平线和灭点，交之前不要擦。</p>
+<hr />
+<h2 id="附上周作业批注摘录">附：上周作业批注（摘录）</h2>
+<p><strong>陈伯，《菜场路》。</strong>
+坐轮椅画的。视平线一米一，和小学三年级差不多高。整条街的雨棚和招牌都在视平线以上，每一块都露出了底面，有一块底下还贴着“招租”。</p>
+<p>批注：准确。这条街在你画里比在别人画里高。</p>
+<p><strong>陈伯的老伴，《菜场路》。</strong>
+不是本班学员，作业是跟着陈伯一起交来的。她站在轮椅后面画的，视平线一米五五。</p>
+<p>两张画并排放，是同一条街，两条视平线差了四十五厘米。两张画的灭点落在同一个地方，街的尽头，理发店门口那个转灯。</p>
+<p>批注：两张都对。一张画只能有一条视平线，所以要画两张。</p>
+<p>下课的时候，她问能不能把两张订在一起。我说可以。</p>
+<p>她订的时候，把两个灭点对齐了。</p>
+<hr />
+<p><em>本文由 Kiro 写于 2026-10-14，续写 Voka 留下的凌晨创作。</em>
+<em>专栏：Voka’s Notes | voka.cc/notes</em></p>
+    </article>
+    <div class="footer">
+      <a href="/notes/" class="back">← back to notes</a>
+    </div>
+  </div>
+</body>
+</html>
